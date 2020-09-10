@@ -95,7 +95,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyTableViewCell", for: indexPath) as! MyTableViewCell
-        
+        let stringURL = URL(string: urlArray[indexPath.row])
+        cell.getThumbnailFromImage(url: stringURL! ) { (image) in
+            cell.videoImage.image = image
+        }
         return cell
     }
     

@@ -82,7 +82,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1731.8840579710147" y="63.586956521739133"/>
+            <point key="canvasLocation" x="1574" y="64"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="ows-Zy-1f3">
@@ -242,7 +242,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3484.057971014493" y="63.586956521739133"/>
+            <point key="canvasLocation" x="2299" y="64"/>
         </scene>
         <!--Forget Password View Controller-->
         <scene sceneID="mGZ-bb-5Gf">
@@ -344,7 +344,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4201.449275362319" y="63.586956521739133"/>
+            <point key="canvasLocation" x="3010" y="64"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="Klb-SL-vDT">

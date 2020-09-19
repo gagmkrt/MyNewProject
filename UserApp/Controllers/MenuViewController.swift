@@ -9,14 +9,18 @@
 import UIKit
 import Firebase
 import SideMenu
+import FirebaseAuth
+import FBSDKLoginKit
 
 class MenuViewController: UIViewController {
     
-
+    let loginManager = LoginManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
 
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func logOut(_ sender: UIButton) {
@@ -31,14 +35,10 @@ class MenuViewController: UIViewController {
         } catch {
             print(error)
         }
+        
+        loginManager.logOut()
+        
     }
-    
-//    @IBAction func changeColorButton(_ sender: UIButton) {
-//
-//        delegate?.changeColor()
-//        dismiss(animated: true, completion: nil)
-//        
-//    }
     
     
 }

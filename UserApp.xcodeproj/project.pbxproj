@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC0E24DA2510B3780080F517 /* DidSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0E24D92510B3780080F517 /* DidSelectController.swift */; };
+		CC0E24DC2510B6E90080F517 /* StoryboardForCells.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC0E24DB2510B6E90080F517 /* StoryboardForCells.storyboard */; };
 		CC4B2293250A06F000BC0E4F /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4B2292250A06F000BC0E4F /* MyTableViewCell.swift */; };
+		CC4B2295250B5F4100BC0E4F /* SettingsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4B2294250B5F4100BC0E4F /* SettingsViewCell.swift */; };
+		CC4B2298250B609D00BC0E4F /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4B2297250B609D00BC0E4F /* SettingsController.swift */; };
 		CCBAD16824F2C9EA008F1C66 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBAD16724F2C9EA008F1C66 /* MenuViewController.swift */; };
 		CCBC87FF24EFC49300B65007 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBC87FE24EFC49300B65007 /* AppDelegate.swift */; };
 		CCBC880124EFC49300B65007 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBC880024EFC49300B65007 /* SceneDelegate.swift */; };
@@ -19,9 +23,6 @@
 		CCBC881524EFCA0300B65007 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBC881424EFCA0300B65007 /* ForgetPasswordViewController.swift */; };
 		CCBC881724EFCD7400B65007 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCBC881624EFCD7400B65007 /* GoogleService-Info.plist */; };
 		CCBC881924EFCF6C00B65007 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBC881824EFCF6C00B65007 /* NetworkConnection.swift */; };
-		CCF0799224F1135100475529 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF0799124F1135100475529 /* NotificationController.swift */; };
-		CCF0799424F1136A00475529 /* EditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF0799324F1136A00475529 /* EditorController.swift */; };
-		CCF0799624F1448000475529 /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF0799524F1448000475529 /* PersonController.swift */; };
 		EDCEB4230284FFD12C31A95D /* Pods_UserApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C6B30989C6FA8848B25506 /* Pods_UserApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +30,11 @@
 		2F6C929A18DC53817B60B1E6 /* Pods-UserApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserApp.release.xcconfig"; path = "Target Support Files/Pods-UserApp/Pods-UserApp.release.xcconfig"; sourceTree = "<group>"; };
 		53C6B30989C6FA8848B25506 /* Pods_UserApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UserApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B5BC14A90877F6F30FEB933 /* Pods-UserApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserApp.debug.xcconfig"; path = "Target Support Files/Pods-UserApp/Pods-UserApp.debug.xcconfig"; sourceTree = "<group>"; };
+		CC0E24D92510B3780080F517 /* DidSelectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidSelectController.swift; sourceTree = "<group>"; };
+		CC0E24DB2510B6E90080F517 /* StoryboardForCells.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardForCells.storyboard; sourceTree = "<group>"; };
 		CC4B2292250A06F000BC0E4F /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		CC4B2294250B5F4100BC0E4F /* SettingsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewCell.swift; sourceTree = "<group>"; };
+		CC4B2297250B609D00BC0E4F /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		CCBAD16724F2C9EA008F1C66 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		CCBC87FB24EFC49300B65007 /* UserApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCBC87FE24EFC49300B65007 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,9 +48,6 @@
 		CCBC881424EFCA0300B65007 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		CCBC881624EFCD7400B65007 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CCBC881824EFCF6C00B65007 /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
-		CCF0799124F1135100475529 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		CCF0799324F1136A00475529 /* EditorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorController.swift; sourceTree = "<group>"; };
-		CCF0799524F1448000475529 /* PersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CC0E24DD2510B7010080F517 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CCBC880424EFC49300B65007 /* Main.storyboard */,
+				CC0E24DB2510B6E90080F517 /* StoryboardForCells.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CC4B2296250B5F4E00BC0E4F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CC4B2292250A06F000BC0E4F /* MyTableViewCell.swift */,
+				CC4B2294250B5F4100BC0E4F /* SettingsViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		CCBC87F224EFC49300B65007 = {
 			isa = PBXGroup;
 			children = (
@@ -102,7 +122,7 @@
 				CCBC880024EFC49300B65007 /* SceneDelegate.swift */,
 				CCBC881A24EFCF9500B65007 /* NetworkConnection */,
 				CCBC881B24EFCFA200B65007 /* Controllers */,
-				CCBC880424EFC49300B65007 /* Main.storyboard */,
+				CC0E24DD2510B7010080F517 /* Storyboards */,
 				CCBC880724EFC49500B65007 /* Assets.xcassets */,
 				CCBC880924EFC49500B65007 /* LaunchScreen.storyboard */,
 				CCBC880C24EFC49500B65007 /* Info.plist */,
@@ -123,13 +143,12 @@
 			isa = PBXGroup;
 			children = (
 				CCBC880224EFC49300B65007 /* ViewController.swift */,
-				CC4B2292250A06F000BC0E4F /* MyTableViewCell.swift */,
 				CCBC881224EFC5DF00B65007 /* AuthViewController.swift */,
 				CCBC881424EFCA0300B65007 /* ForgetPasswordViewController.swift */,
-				CCF0799124F1135100475529 /* NotificationController.swift */,
-				CCF0799324F1136A00475529 /* EditorController.swift */,
-				CCF0799524F1448000475529 /* PersonController.swift */,
 				CCBAD16724F2C9EA008F1C66 /* MenuViewController.swift */,
+				CC4B2297250B609D00BC0E4F /* SettingsController.swift */,
+				CC0E24D92510B3780080F517 /* DidSelectController.swift */,
+				CC4B2296250B5F4E00BC0E4F /* Cells */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -195,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCBC881724EFCD7400B65007 /* GoogleService-Info.plist in Resources */,
+				CC0E24DC2510B6E90080F517 /* StoryboardForCells.storyboard in Resources */,
 				CCBC880B24EFC49500B65007 /* LaunchScreen.storyboard in Resources */,
 				CCBC880824EFC49500B65007 /* Assets.xcassets in Resources */,
 				CCBC880624EFC49300B65007 /* Main.storyboard in Resources */,
@@ -250,14 +270,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCF0799424F1136A00475529 /* EditorController.swift in Sources */,
 				CCBAD16824F2C9EA008F1C66 /* MenuViewController.swift in Sources */,
-				CCF0799624F1448000475529 /* PersonController.swift in Sources */,
+				CC0E24DA2510B3780080F517 /* DidSelectController.swift in Sources */,
+				CC4B2295250B5F4100BC0E4F /* SettingsViewCell.swift in Sources */,
 				CC4B2293250A06F000BC0E4F /* MyTableViewCell.swift in Sources */,
 				CCBC881324EFC5DF00B65007 /* AuthViewController.swift in Sources */,
-				CCF0799224F1135100475529 /* NotificationController.swift in Sources */,
 				CCBC880324EFC49300B65007 /* ViewController.swift in Sources */,
 				CCBC881924EFCF6C00B65007 /* NetworkConnection.swift in Sources */,
+				CC4B2298250B609D00BC0E4F /* SettingsController.swift in Sources */,
 				CCBC881524EFCA0300B65007 /* ForgetPasswordViewController.swift in Sources */,
 				CCBC87FF24EFC49300B65007 /* AppDelegate.swift in Sources */,
 				CCBC880124EFC49300B65007 /* SceneDelegate.swift in Sources */,

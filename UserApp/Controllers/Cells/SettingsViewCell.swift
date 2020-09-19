@@ -1,14 +1,14 @@
 //
-//  MyTableViewCell.swift
+//  SettingsViewCell.swift
 //  UserApp
 //
-//  Created by Gag Mkrtchyan on 9/10/20.
+//  Created by Gag Mkrtchyan on 9/11/20.
 //  Copyright © 2020 Gag Mkrtchyan. All rights reserved.
 //
 
 import UIKit
 
-class MyTableViewCell: UITableViewCell {
+class SettingsViewCell: UITableViewCell {
     
     
 

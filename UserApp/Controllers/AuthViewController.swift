@@ -9,10 +9,14 @@
 import UIKit
 import Firebase
 import FBSDKLoginKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class AuthViewController: UIViewController {
     
-        var singUp = true {
+    let buttonFb = FBLoginButton()
+    
+    var singUp = true {
         willSet {
             if newValue {
                 chekIn.text = "Register"
@@ -21,7 +25,7 @@ class AuthViewController: UIViewController {
                 emailField.text = nil
                 passwordField.text = nil
                 forgetPassword.isHidden = true
-
+                
             } else {
                 chekIn.text = "Sing In"
                 nameField.isHidden = true
@@ -29,7 +33,7 @@ class AuthViewController: UIViewController {
                 emailField.text = nil
                 passwordField.text = nil
                 forgetPassword.isHidden = false
-
+                
             }
         }
     }
@@ -51,13 +55,14 @@ class AuthViewController: UIViewController {
         passwordField.delegate = self
         forgetPassword.isHidden = true
         
-        let buttonFb = FBLoginButton()
         buttonFb.center = view.center
         buttonFb.frame.origin.y = 465
         view.addSubview(buttonFb)
         buttonFb.delegate = self
         
     }
+    
+    
     
     
     override func viewDidAppear(_ animated: Bool) {
@@ -68,7 +73,7 @@ class AuthViewController: UIViewController {
     }
     
     
-   func alertForAll(title: String, message: String) {
+    func alertForAll(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(alertAction)
@@ -78,26 +83,24 @@ class AuthViewController: UIViewController {
     
     
     @IBAction func tapForHideKeyboard(_ sender: UITapGestureRecognizer) {
-        
         nameField.resignFirstResponder()
         emailField.resignFirstResponder()
         passwordField.resignFirstResponder()
     }
     
     
-   
+    
     
     @IBAction func signUpAction(_ sender: UIButton) {
-        
         singUp = !singUp
         emailField.resignFirstResponder()
         passwordField.resignFirstResponder()
+        
     }
     
     
     @IBAction func forgotPassword(_ sender: UIButton) {
-        
-         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ForgetPasswordViewController") as! ForgetPasswordViewController
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ForgetPasswordViewController") as! ForgetPasswordViewController
         
         present(vc, animated: true, completion: nil)
     }
@@ -106,13 +109,13 @@ class AuthViewController: UIViewController {
 }
 
 
+
 extension AuthViewController: UITextFieldDelegate {
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-       
-            let name = nameField.text!
-            let email = emailField.text!
-            let password = passwordField.text!
+        
+        var name = nameField.text!
+        let email = emailField.text!
+        let password = passwordField.text!
         
         if CheckInternet.Connection() {
             
@@ -130,8 +133,9 @@ extension AuthViewController: UITextFieldDelegate {
                                 let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
                                 UIApplication.shared.windows.first?.rootViewController = vc
                             }
+                            
                         } else if self.emailField.text != result?.user.email {
-                            self.alertForAll(title: "Error", message: "No such email address exists")
+                            self.alertForAll(title: "Error", message: "Not free or not correct email address")
                         }
                     }
                     
@@ -158,52 +162,54 @@ extension AuthViewController: UITextFieldDelegate {
                     }
                     
                 } else {
-                    
                     alertForAll(title: "Warning", message: "Please fill the all fields")
                 }
             }
             
         } else {
             self.alertForAll(title: "Oops!", message: "Your Device is not connected with internet")
-            
         }
         
         return true
     }
 }
 
-extension AuthViewController: LoginButtonDelegate {
+extension AuthViewController: LoginButtonDelegate {    
     func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
         if result!.isCancelled {
             print("cancelled")
             
         } else {
             if error == nil {
-                GraphRequest(graphPath: "me", parameters: ["fields" : "email, name"], tokenString: AccessToken.current?.tokenString, version: nil, httpMethod: HTTPMethod(rawValue: "GET")).start { (nil, result, error) in
-                    if error == nil {
-                        print(result)
-                        
-                        let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
-                        
-                        Auth.auth().signIn(with: credential) { (result, error) in
-                            if error == nil {
-                                print(result?.user.uid)
-                                
-                                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ViewController") as! ViewController
-                                
-                                UIApplication.shared.windows.first?.rootViewController? = vc
-                                
-                            }
-                        }
-                    }
+                GraphRequest(graphPath: "me", parameters: ["fields": "name, email, picture"],
+                             tokenString: AccessToken.current?.tokenString, version: nil, httpMethod: HTTPMethod(rawValue: "GET")).start { (nil, result, error) in
+                                if error == nil {
+                                    print(result)
+                                    
+                                    let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
+                                    
+                                    Auth.auth().signIn(with: credential) { (result, error) in
+                                        if error == nil {
+                                            print(result?.user.uid)
+                                            
+                                            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+                                            UIApplication.shared.windows.first?.rootViewController = vc
+                                        }
+                                    }
+                                }
                 }
             }
         }
     }
     
+    
+    
     func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
-        print("logout")
+        print("LogOut")
+        
     }
     
     
+    
 }
+
